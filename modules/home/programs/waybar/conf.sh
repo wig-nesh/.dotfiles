@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# Paper Deadline: March 1, 2026 12:00 UTC
+
+# CONFIGURE YOUR DEADLINE HERE (in Unix timestamp)
+# To get timestamp: date -d "2026-03-01 12:00:00 UTC" +%s
+DATE="2026-09-15 12:00:00 UTC"
+PAPER_DEADLINE=$(date -d "${DATE}" +%s)
+CONF_NAME="ICRA 2027"
+
+NOW=$(date +%s)
+
+# Calculate time difference
+DIFF=$((PAPER_DEADLINE - NOW))
+
+if [ $DIFF -lt 0 ]; then
+    # Deadline has passed
+    echo "{\"text\":\"${CONF_NAME} Done\",\"tooltip\":\"Paper deadline passed\",\"class\":\"done\"}"
+    exit 0
+fi
+
+# Calculate days, hours, minutes
+DAYS=$((DIFF / 86400))
+HOURS=$(((DIFF % 86400) / 3600))
+MINUTES=$(((DIFF % 3600) / 60))
+
+# Calculate weeks, days, hours, minutes
+WEEKS=$((DAYS / 7))
+REMAINING_DAYS=$((DAYS % 7))
+
+# Format display text based on time remaining
+if [ $DAYS -gt 30 ]; then
+    TEXT="${WEEKS}w ${REMAINING_DAYS}d"
+elif [ $DAYS -gt 7 ]; then
+    TEXT="${WEEKS}w ${REMAINING_DAYS}d"
+elif [ $DAYS -gt 0 ]; then
+    TEXT="${DAYS}d ${HOURS}h ${MINUTES}m"
+else
+    TEXT="${HOURS}h ${MINUTES}m"
+fi
+
+# Build tooltip
+TOOLTIP="${CONF_NAME} Paper Deadline\\n\\n${WEEKS} weeks, ${REMAINING_DAYS} days, ${HOURS} hours, ${MINUTES} minutes"
+
+# Determine CSS class based on urgency
+if [ $DAYS -le 3 ]; then
+    CLASS="urgent"
+elif [ $DAYS -le 14 ]; then
+    CLASS="soon"
+else
+    CLASS="normal"
+fi
+
+# Output JSON for Waybar
+# echo "{\"text\":\"$TEXT\",\"tooltip\":\"$TOOLTIP\",\"class\":\"$CLASS\"}"
+echo $TEXT

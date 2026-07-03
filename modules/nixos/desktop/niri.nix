@@ -1,0 +1,19 @@
+{ self, ... }:
+{
+  flake.nixosModules.niri = {
+    imports = [
+      self.nixosModules.nautilus
+      self.nixosModules.sddm
+      self.nixosModules.polkit-gnome
+    ];
+    programs.niri = {
+      enable = true;
+    };
+
+    services = {
+      gvfs.enable = true;
+      devmon.enable = true;
+      upower.enable = true;
+    };
+  };
+}

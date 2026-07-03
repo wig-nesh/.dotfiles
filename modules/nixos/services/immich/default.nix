@@ -1,0 +1,50 @@
+{
+  flake.nixosModules.immich =
+    { config
+    , ...
+    }:
+    {
+      sops.secrets = {
+        "immich" = { };
+      };
+
+      services.immich = {
+        enable = true;
+
+        settings = builtins.fromJSON (builtins.readFile ./immich.json);
+
+        secretsFile = config.sops.secrets."immich".path;
+
+        mediaLocation = "/data/immich";
+
+        accelerationDevices = null;
+
+        machine-learning = {
+          enable = true;
+          # As immich user has no home
+          environment = {
+            HF_XET_CACHE = "/var/cache/immich/huggingface-xet";
+          };
+        };
+        redis = {
+          enable = true;
+        };
+
+        database = {
+          enable = true;
+        };
+      };
+
+      users.users.immich.extraGroups = [
+        "video"
+        "render"
+      ];
+      services.caddy.virtualHosts."immich.mathai.duckdns.org".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy localhost:2283
+        request_body {
+          max_size 50000MB
+        }
+      '';
+    };
+}
