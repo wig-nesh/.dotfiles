@@ -12,17 +12,17 @@
       options.preferences.user = {
         name = lib.mkOption {
           type = lib.types.str;
-          default = "mathai";
+          default = "wignesh";
         };
 
         fullName = lib.mkOption {
           type = lib.types.str;
-          default = "Mathai Mathew";
+          default = "Vignesh Vembar";
         };
 
         email = lib.mkOption {
           type = lib.types.str;
-          default = "mathewp8616@gmail.com";
+          default = "vigneshvembar.m@students.iiit.ac.in";
         };
 
         extraGroups = lib.mkOption {
