@@ -12,7 +12,12 @@
         nix-prefetch-git
       ];
 
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs.config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-40.10.5"
+        ];
+      };
 
       nix = {
         package = pkgs.nixVersions.latest;

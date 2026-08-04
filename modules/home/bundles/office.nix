@@ -8,8 +8,9 @@
       home.packages = with pkgs; [
         evince
         libreoffice
-        obsidian
+        # obsidian
         signal-desktop
+        element-desktop
         vesktop
       ];
     };

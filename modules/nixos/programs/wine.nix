@@ -13,8 +13,7 @@
 
       environment.systemPackages = with pkgs; [
         lutris
-        piper
-        # steam
+        steam
       ];
 
     };

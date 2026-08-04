@@ -36,6 +36,8 @@
       # self.nixosModules.secure-boot
       self.nixosModules.systemd-boot
       self.nixosModules.gnome
+
+      self.nixosModules.wine
     ];
 
     preferences = {

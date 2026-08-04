@@ -14,29 +14,32 @@
       home.packages = with pkgs; [
         vscode
 
-        caligula
+        # caligula
         nvitop
         gh
 
-        gemini-cli
-        codex
+        # gemini-cli
+        # codex
         opencode
 
         # antigravity
-        inputs.antigravity-nix.packages.${pkgs.stdenv.system}.default
+        # inputs.antigravity-nix.packages.${pkgs.stdenv.system}.default
         # inputs.antigravity-nix.packages.${pkgs.stdenv.system}.google-antigravity-ide
-        inputs.antigravity-nix.packages.${pkgs.stdenv.system}.google-antigravity-cli
+        # inputs.antigravity-nix.packages.${pkgs.stdenv.system}.google-antigravity-cli
 
         # python
         uv
 
         # Notes
-        obsidian
+        # obsidian
         zotero
 
-        # robotics
-        arduino-cli
-        minicom
+        # # robotics
+        # arduino-cli
+        # minicom
+
+        # others
+        blender
       ];
 
     };
