@@ -51,6 +51,17 @@
             IdentitiesOnly = true;
           };
 
+          "ada" = {
+            HostName = "ada.iiit.ac.in";
+            User = "ayushk02";
+          };
+
+          "gnode117" = {
+            HostName = "gnode117";
+            User = "ayushk02";
+            ProxyCommand = "ssh -W %h:%p ada";
+          };
+
         };
       };
       services.ssh-agent.enable = true;

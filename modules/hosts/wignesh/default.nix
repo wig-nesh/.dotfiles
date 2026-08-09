@@ -21,6 +21,7 @@
       # self.nixosModules.btrfs
       self.nixosModules.nvidia
       self.nixosModules.sleep
+      self.nixosModules.zram
 
       self.nixosModules.plymouth
       self.nixosModules.stylix
