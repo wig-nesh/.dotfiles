@@ -21,11 +21,11 @@
             hidePodcasts
             shuffle # shuffle+ (special characters are sanitized out of extension names)
           ];
-          theme = lib.mkForce spicePkgs.themes.starryNight; # sleek
-          colorScheme = lib.mkForce "Base";
-          # # OLD THEME
-          # theme = lib.mkForce spicePkgs.themes.text;
-          # colorScheme = lib.mkForce "RosePine";
+          # theme = lib.mkForce spicePkgs.themes.starryNight; # sleek
+          # colorScheme = lib.mkForce "Base";
+          # # # OLD THEME
+          # # theme = lib.mkForce spicePkgs.themes.text;
+          # # colorScheme = lib.mkForce "RosePine";
         };
     };
 }

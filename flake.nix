@@ -27,7 +27,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      # TODO: switch back to github:sodiboo/niri-flake once PR #1853 is merged
+      # https://github.com/sodiboo/niri-flake/pull/1853 (fixes libdisplay-info_0_2 removal)
+      url = "github:bugeats/niri-flake/update-libdisplay-info";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
