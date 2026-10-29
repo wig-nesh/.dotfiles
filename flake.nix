@@ -32,12 +32,20 @@
       url = "github:bugeats/niri-flake/update-libdisplay-info";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # quickshell (noctalia-qs) doesn't build against Qt 6.12 yet (quickshell#1235);
+    # build noctalia + quickshell wholly from this older nixpkgs (Qt 6.11.1).
+    # Switch noctalia back to follows = "nixpkgs" once noctalia-qs has the fix.
+    nixpkgs-qt611.url = "github:NixOS/nixpkgs/867dcbc30bafe3c862ef88620f2e7a109d7d3be5";
     noctalia = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-qt611";
     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spotifast = {
+      url = "github:crmne/spotifast";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefox-addons = {

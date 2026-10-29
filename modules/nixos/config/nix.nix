@@ -16,6 +16,8 @@
         allowUnfree = true;
         permittedInsecurePackages = [
           "electron-40.10.5"
+          # (zotero off) bundled firefox ESR 140 (EOL 2026-10-13); drop once nixpkgs updates zotero
+          # "firefox-esr-140-bin-unwrapped-140.17.0esr"
         ];
       };
 
@@ -40,11 +42,15 @@
           ];
           sandbox = true;
           auto-optimise-store = true;
+          cores = 6;
           allowed-users = [
             "root"
             "@wheel"
           ];
-          experimental-features = "nix-command flakes";
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
           http-connections = 50;
           warn-dirty = false;
           log-lines = 50;

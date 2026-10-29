@@ -1,6 +1,7 @@
 {
   flake.nixosModules.wine =
     { pkgs
+    , lib
     , ...
     }:
     {
@@ -14,6 +15,11 @@
       environment.systemPackages = with pkgs; [
         lutris
         steam
+        (lib.hiPrio (writeShellScriptBin "steam" ''
+          export XDG_SESSION_TYPE=x11
+          export DISPLAY=:1
+          exec ${lib.getExe steam} "$@"
+        ''))
       ];
 
     };

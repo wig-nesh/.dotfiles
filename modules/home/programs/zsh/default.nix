@@ -42,6 +42,13 @@
         };
         initContent = lib.mkAfter ''
           ${builtins.readFile ./.zshrc}
+          vpn() {
+            nmcli connection up "linux" --ask
+            sudo ip route del default via 10.15.0.1 dev tun0 2>/dev/null
+          }
+          vpn-down() {
+            nmcli connection down "linux"
+          }
         '';
       };
     };

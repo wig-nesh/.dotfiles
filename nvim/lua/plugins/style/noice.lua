@@ -3,13 +3,8 @@ return {
     event = "VeryLazy",
     dependencies = {
         "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
     },
     config = function()
-        require("notify").setup({
-            background_colour = "#000000",
-        })
-
         require("noice").setup({
             lsp = {
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -18,6 +13,12 @@ return {
                     ["vim.lsp.util.stylize_markdown"] = true,
                     ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
                 },
+            },
+            -- show messages inline above the cmdline instead of popup windows
+            messages = {
+                view = "mini",
+                view_error = "mini",
+                view_warn = "mini",
             },
             -- you can enable a preset for easier configuration
             presets = {

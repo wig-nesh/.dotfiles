@@ -131,6 +131,41 @@
                   colorizeSystemText = "none";
                   generalTooltipText = "";
                   hideMode = "alwaysExpanded";
+                  icon = "ghost";
+                  iconPosition = "left";
+                  id = "CustomButton";
+                  ipcIdentifier = "";
+                  leftClickExec = "";
+                  leftClickUpdateText = true;
+                  maxTextLength = {
+                    horizontal = 16;
+                    vertical = 10;
+                  };
+                  middleClickExec = "";
+                  middleClickUpdateText = false;
+                  parseJson = false;
+                  rightClickExec = "";
+                  rightClickUpdateText = false;
+                  showExecTooltip = true;
+                  showIcon = true;
+                  showTextTooltip = true;
+                  textCollapse = "";
+                  textCommand = "bash /home/wignesh/.dotfiles/modules/home/programs/waybar/grad.sh";
+                  textIntervalMs = 100;
+                  textStream = false;
+                  wheelDownExec = "";
+                  wheelDownUpdateText = false;
+                  wheelExec = "";
+                  wheelMode = "unified";
+                  wheelUpExec = "";
+                  wheelUpUpdateText = false;
+                  wheelUpdateText = false;
+                }
+                {
+                  colorizeSystemIcon = "error";
+                  colorizeSystemText = "none";
+                  generalTooltipText = "";
+                  hideMode = "alwaysExpanded";
                   icon = "toilet-paper";
                   iconPosition = "left";
                   id = "CustomButton";

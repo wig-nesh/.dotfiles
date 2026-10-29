@@ -30,3 +30,6 @@ bindkey "^[[3~" delete-char
 
 # Remove Logging for direnv
 export DIRENV_LOG_FORMAT=""
+
+# claude code asked for ts
+export PATH="$HOME/.local/bin:$PATH"

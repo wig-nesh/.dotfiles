@@ -12,7 +12,7 @@
         self.homeModules.kitty
         # self.homeModules.sops
         self.homeModules.stylix
-        self.homeModules.zed
+        # self.homeModules.zed
         self.homeModules.ssh
       ];
       home.packages = with pkgs; [

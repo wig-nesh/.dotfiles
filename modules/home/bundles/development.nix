@@ -32,14 +32,17 @@
 
         # Notes
         # obsidian
-        zotero
+        # zotero
 
         # # robotics
         # arduino-cli
         # minicom
 
         # others
-        blender
+        # (blender.override {
+        #   cudaSupport = true;
+        #   cudaArches = [ "sm_89" ];
+        # })
       ];
 
     };

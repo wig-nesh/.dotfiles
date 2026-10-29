@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-# Paper Deadline: March 1, 2026 12:00 UTC
-
 # CONFIGURE YOUR DEADLINE HERE (in Unix timestamp)
 # To get timestamp: date -d "2026-03-01 12:00:00 UTC" +%s
-DATE="2026-09-15 12:00:00 UTC"
+DATE="2026-11-04 22:00:00 UTC"
 PAPER_DEADLINE=$(date -d "${DATE}" +%s)
-CONF_NAME="ICRA 2027"
+CONF_NAME="V2D"
 
 NOW=$(date +%s)
 
@@ -30,13 +28,15 @@ REMAINING_DAYS=$((DAYS % 7))
 # Format display text based on time remaining
 if [ $DAYS -gt 30 ]; then
     TEXT="${WEEKS}w ${REMAINING_DAYS}d"
-elif [ $DAYS -gt 7 ]; then
+elif [ $DAYS -gt 30 ]; then
     TEXT="${WEEKS}w ${REMAINING_DAYS}d"
 elif [ $DAYS -gt 0 ]; then
     TEXT="${DAYS}d ${HOURS}h ${MINUTES}m"
 else
     TEXT="${HOURS}h ${MINUTES}m"
 fi
+
+FULLTEXT="${CONF_NAME}: ${TEXT}"
 
 # Build tooltip
 TOOLTIP="${CONF_NAME} Paper Deadline\\n\\n${WEEKS} weeks, ${REMAINING_DAYS} days, ${HOURS} hours, ${MINUTES} minutes"
@@ -52,4 +52,4 @@ fi
 
 # Output JSON for Waybar
 # echo "{\"text\":\"$TEXT\",\"tooltip\":\"$TOOLTIP\",\"class\":\"$CLASS\"}"
-echo $TEXT
+echo $FULLTEXT

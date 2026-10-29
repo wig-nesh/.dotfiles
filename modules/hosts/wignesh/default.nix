@@ -14,7 +14,7 @@
       self.nixosModules.common-bundle
       self.nixosModules.user
 
-      self.nixosModules.hyprland
+      # self.nixosModules.hyprland
       self.nixosModules.niri
       self.nixosModules.cloudflare-warp
       self.nixosModules.bluetooth
@@ -28,6 +28,7 @@
 
       self.nixosModules.avahi
       self.nixosModules.docker
+      self.nixosModules.vpn
       # self.nixosModules.tailscale
       self.nixosModules.printing
 
@@ -39,6 +40,7 @@
       self.nixosModules.gnome
 
       self.nixosModules.wine
+      self.nixosModules.appimage
     ];
 
     preferences = {

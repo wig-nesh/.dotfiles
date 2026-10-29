@@ -12,6 +12,7 @@
         signal-desktop
         element-desktop
         vesktop
+        slack
       ];
     };
 }
