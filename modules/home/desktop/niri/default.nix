@@ -14,9 +14,9 @@
       ];
       programs.niri = {
         enable = true;
-        # Use the niri-flake's own unstable package rather than relying on
-        # a separate unstable nixpkgs channel.
-        package = inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+        # stable niri from nixpkgs (cached on cache.nixos.org); niri-flake is only
+        # used for its home module. unstable was: inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable
+        package = pkgs.niri;
       };
 
       home.packages = with pkgs; [

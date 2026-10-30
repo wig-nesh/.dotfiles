@@ -1,0 +1,6 @@
+{
+  "settings.command": "Command",
+  "settings.glyph": "Glyph",
+  "settings.glyph_color": "Glyph color",
+  "settings.interval_ms": "Refresh interval (ms)"
+}

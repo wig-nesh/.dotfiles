@@ -73,6 +73,9 @@
             # Vertical Tabs
             "sidebar.verticalTabs" = true;
             "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
+            # Firefox 158 "Nova" redesign rounds everything into pills; keep the old look
+            "browser.nova.enabled" = false;
+            "browser.newtabpage.activity-stream.nova.enabled" = false;
             "sidebar.visibility" = "always-show";
 
             # Enable extensions by default

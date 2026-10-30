@@ -5,7 +5,7 @@
         enable = true;
         settings = {
           general = {
-            lock_cmd = "noctalia-shell ipc call lockScreen lock";
+            lock_cmd = "noctalia msg session lock";
             before_sleep_cmd = "loginctl lock-session";
             after_sleep_cmd = "hyprctl dispatch dpms on";
           };

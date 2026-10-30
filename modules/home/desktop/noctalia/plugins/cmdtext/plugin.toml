@@ -1,0 +1,39 @@
+# Bar widget that shows a shell command's stdout, re-run every `interval_ms`.
+# Stands in for v4's CustomButton textCommand (used for the deadline countdowns).
+id          = "wignesh/cmdtext"
+name        = "Command Text"
+version     = "1.0.0"
+plugin_api  = 3
+author      = "wignesh"
+icon        = "terminal"
+description = "Shows the output of a shell command on the bar."
+
+[[widget]]
+id    = "cmd"
+entry = "widget.luau"
+
+  [[widget.setting]]
+  key       = "command"
+  type      = "string"
+  label_key = "settings.command"
+  default   = "echo hello"
+
+  [[widget.setting]]
+  key       = "glyph"
+  type      = "glyph"
+  label_key = "settings.glyph"
+  default   = "terminal"
+
+  [[widget.setting]]
+  key       = "glyph_color"
+  type      = "color"
+  label_key = "settings.glyph_color"
+  default   = "error"
+
+  [[widget.setting]]
+  key       = "interval_ms"
+  type      = "int"
+  label_key = "settings.interval_ms"
+  default   = 60000
+  min       = 1000
+  max       = 3600000
